@@ -17,7 +17,7 @@ myFunction();
 
 //🚀🚀🚀 ⬇️ 📝 Explanation ⬇️ 📝 🚀🚀🚀: 
 
-// In the above code, the variable 'internal' is defined in the myFunction function. Nested inside myFunction is another function, nestedFunction. This is an instance of a closure, where nestedFunction is able to access the scope of the function in which its nested. If, for example, the variable 'internal' was defined in nestedFunction, myFunction (the outer function) would not be able to access the variable 'internal'. This is because a closure only works up the chain, from inner to outer, and not the inverse.
+// In the above code, the variable 'internal' is defined in the myFunction function. Nested inside myFunction is another function, nestedFunction. This is an instance of a closure, where nestedFunction is able to access the scope of the function in which it is nested (in which 'internal' is defined). If, for example, the variable 'internal' was defined in nestedFunction instead, myFunction (the outer function) would not be able to access it. This is because a closure only works up the chain, from inner to outer, and not the inverse.
 
 
 
@@ -29,10 +29,10 @@ myFunction();
 For example, `summation(4)` should return 10 because 1+2+3+4 is 10. Note, you may use a for loop for this function if you wish */
 
 function summation(number) {
-  let total = 0;
+  let counter = 0;
   for (let i = 0; i < number; i++) {
-    total = total + (i+1)
-  } return total
+    counter += (i+1)
+  } return counter
 }
 
 // 🦁🦁🦁 Topic 2: ADVANCED Array Methods 🦁🦁🦁
@@ -59,11 +59,11 @@ const zooAnimals = [
 
   function animalNames(array){
     let displayNames = [];
-    array.forEach(function(animal){
-      displayNames.push(`name: ${animal.animal_name}, scientific: ${animal.scientific_name}`)
-    }); return displayNames
+    array.forEach(animal => displayNames.push(`name: ${animal.animal_name}, scientific: ${animal.scientific_name}`)
+    ); return displayNames
   }
-  // console.log(animalNames(zooAnimals))
+  let displayNames = animalNames(zooAnimals);
+  console.log(displayNames)
 
   /* 🦁🦁🦁 Request 2: .map() 🦁🦁🦁
   The zoo needs a list of all their animal's names converted to lower case. 
@@ -152,13 +152,13 @@ function CuboidMaker(properties){
   this.height = properties.height;
 }
 
-const testProps = {
-  length:5,
-  width:5,
-  height:5,
-}
+// const testProps = {
+//   length:5,
+//   width:5,
+//   height:5,
+// }
 
-const testCube = new CuboidMaker(testProps);
+// const testCube = new CuboidMaker(testProps);
 // console.log(testCube);
 
 /* 🐴🐴🐴 Step 2: Volume Method 🐴🐴🐴

@@ -26,11 +26,13 @@ Edit this document to include your answers after each question. Make sure to lea
 
 1. Explain the differences between `.map`, `.reduce` and `.filter` and describe a use case for each. 
 
-- `.map` - an array method that iterates over an array performing a given callback function to each item in the array, returning a new array. This is useful for when you want to do something to each item in a given array. For example, taking a list of users in a database that contains a lot of additional information for each user and returning an array of objects containing just the username and ID#.
+- `.map` - an array method that takes a callback function as an argument and iterates over all elements of the calling array, executing code defined in the callback. This is useful for all sorts of things, including transforming the data in the calling array or returning only desired data from each element of the calling array. For example, taking a list of objects with a website's users' names, passwords, birthdays, addresses, etc. and returning an array of objects containing only, for example, names and birthdays.
 
-- `.reduce` - an array method that reduces an array to a single value based on logic given in the callback function, returning the single value. This is useful for when you want to create a single data point out of a list of properties. For example, you could take an array of house objects that included a square footage property and return the average square footage of the houses in the list.
+- `.reduce` - an array method that takes a callback function as an argument that reduces an array to a single value based on logic given in the callback function. This is useful for when you want to create a single data point out of a list of properties. For example, a landlord could have a list of objects where each object is a building they own and includes a property for number of current occupants. They could invoke `.reduce` on this array and return the total number of all occupants across all buildings.
 
--`.filter` - an array method that iterates over an array performing a given callback function to find instances in an array that match desired logic, returning a new array. This is useful when you want to find only objects in an array that meet desired specification. For example, you could take an array of users in a database and return a new array of the users who had been members for x number of years. 
+-`.filter` - an array method that takes a callback function as an argument that returns a new array consisting of the elements from the original array that produce a `true` output when passed through logic defined in the callback function. This is useful when you want to find only objects in an array that meet desired specification. For example, you could take an array of users in a database and return a new array of the users who had been members for x number of years. 
+
+Similarities include them all being array methods and they all take callback functions as an argument. `.map` and `.filter` both produce new arrays, but `.filter` produces a single value. They all have different use cases, as described above.
 
 2. Explain the difference between a callback and a higher order function.
 
@@ -43,13 +45,13 @@ A closure is when an inner or nested function reaches into an outer function to 
 4. Describe the four principles of the 'this' keyword.
 
     1. Global binding - when in the global scope, `this` is bound to the window/console object.
-    2. Implicit binding - when invoking a function with a preceding dot, the object left of the dot is the `this`.
+    2. Implicit binding - when invoking a function with a preceding dot, the object to the left of the dot is the `this`.
     3. New binding - whenever a constructor function is used, `this` refers to the specific new instance of the object created by the constructor function.
-    4. Explicit binding - whenever a `.call`, `.apply`, or `.bind` method is invoked, `this` is explicitly defined
+    4. Explicit binding - when a `.call`, `.apply`, or `.bind` method is invoked, `this` is explicitly defined
 
 5. Why do we need super() in an extended class?
 
-When using a class constructor to make an extended class, `super()` effectively replaces having to explicitly bind `this` with a `.call` on a parent class. Nothing different is happening under the hood, but it reduces necessary lines of code and is a cleaner syntax.
+When using the class keyword to make a child class extended from a parent class, calling `super()` in the child's constructor function allows us to pass attributes through the parent class, effectively replacing needing to explicitly bind `this` with a `.call` on the parent class. Nothing different is happening under the hood, but it reduces necessary lines of code and is a friendlier syntax, or syntactic sugar :) 
 
 
 You are expected to be able to answer questions in these areas. Your responses contribute to your Sprint Challenge grade. 
