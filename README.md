@@ -26,13 +26,31 @@ Edit this document to include your answers after each question. Make sure to lea
 
 1. Explain the differences between `.map`, `.reduce` and `.filter` and describe a use case for each. 
 
+- `.map` - an array method that iterates over an array performing a given callback function to each item in the array, returning a new array. This is useful for when you want to do something to each item in a given array. For example, taking a list of users in a database that contains a lot of additional information for each user and returning an array of objects containing just the username and ID#.
+
+- `.reduce` - an array method that reduces an array to a single value based on logic given in the callback function, returning the single value. This is useful for when you want to create a single data point out of a list of properties. For example, you could take an array of house objects that included a square footage property and return the average square footage of the houses in the list.
+
+-`.filter` - an array method that iterates over an array performing a given callback function to find instances in an array that match desired logic, returning a new array. This is useful when you want to find only objects in an array that meet desired specification. For example, you could take an array of users in a database and return a new array of the users who had been members for x number of years. 
+
 2. Explain the difference between a callback and a higher order function.
+
+A higher order function is a function that takes another function as one of its arguments. Some examples of this include the array methods discussed above. A callback function is a function fed into another function as an argument. For example, all of the array methods described above take a callback function.
 
 3. Explain what a closure is.
 
+A closure is when an inner or nested function reaches into an outer function to access values defined outside the inner function. 
+
 4. Describe the four principles of the 'this' keyword.
 
+    1. Global binding - when in the global scope, `this` is bound to the window/console object.
+    2. Implicit binding - when invoking a function with a preceding dot, the object left of the dot is the `this`.
+    3. New binding - whenever a constructor function is used, `this` refers to the specific new instance of the object created by the constructor function.
+    4. Explicit binding - whenever a `.call`, `.apply`, or `.bind` method is invoked, `this` is explicitly defined
+
 5. Why do we need super() in an extended class?
+
+When using a class constructor to make an extended class, `super()` effectively replaces having to explicitly bind `this` with a `.call` on a parent class. Nothing different is happening under the hood, but it reduces necessary lines of code and is a cleaner syntax.
+
 
 You are expected to be able to answer questions in these areas. Your responses contribute to your Sprint Challenge grade. 
 
