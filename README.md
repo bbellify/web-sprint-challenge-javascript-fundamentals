@@ -51,7 +51,7 @@ A closure is when an inner or nested function reaches into an outer function to 
 
 5. Why do we need super() in an extended class?
 
-When using the class keyword to make a child class extended from a parent class, calling `super()` in the child's constructor function allows us to pass attributes through the parent class, effectively replacing needing to explicitly bind `this` with a `.call` on the parent class. Nothing different is happening under the hood, but it reduces necessary lines of code and is a friendlier syntax, or syntactic sugar :) 
+When using the class keyword to make a child class extended from a parent class, calling `super()` in the child's constructor function allows us to pass attributes through the parent class, effectively replacing needing to explicitly bind `this` with a `.call` on the parent class. Nothing different is happening under the hood, but is a friendlier syntax, or syntactic sugar :) 
 
 
 You are expected to be able to answer questions in these areas. Your responses contribute to your Sprint Challenge grade. 
